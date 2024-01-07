@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ThoughtController = require('../controllers/thoughtController');
+const ThoughtController = require('../controllers/thoughtControllers');
 
 router.get('/api/thoughts', ThoughtController.getAllThoughts);
 
