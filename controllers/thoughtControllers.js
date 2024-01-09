@@ -12,7 +12,7 @@ module.exports = {
   async getThoughtById(req, res) {
     try {
       const thought = await Thought.findById(req.params.id);
-      if (user == null) {
+      if (thought == null) {
         return res.status(404).json({ message: "Cannot find user" });
       }
       res.json(thought);
@@ -36,7 +36,7 @@ module.exports = {
         { runValidators: true, new: true }
       );
       if (!thought) {
-        res.status(404).json({ message: "No user with this id!" });
+        return res.status(404).json({ message: "No thought with this id!" });
       }
       res.json(thought);
     } catch (err) {
